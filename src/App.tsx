@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ThemeToggle from "./components/ThemeToggle";
 import SearchBar from "./components/SearchBar";
 import UserProfile from "./components/UserProfile";
 
@@ -16,6 +17,7 @@ const App = () => {
 
   return (
     <div>
+      <ThemeToggle />
       <SearchBar
         input={input}
         onInputChange={handleInputChange}
