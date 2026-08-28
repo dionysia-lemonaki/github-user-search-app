@@ -1,4 +1,5 @@
 import { useGithubUser } from "../hooks/useGithubUser";
+import UserNotFound from "./UserNotFound";
 import { formatDate } from "../utils/formatDate";
 import iconLocation from "../assets/images/icon-location.svg";
 import iconTwitter from "../assets/images/icon-twitter.svg";
@@ -13,6 +14,9 @@ const UserProfile = ({ username }: { username: string }) => {
   }
 
   if (isError) {
+    if (error.message === "User not found") {
+      return <UserNotFound />;
+    }
     return <p>{error.message}</p>;
   }
 

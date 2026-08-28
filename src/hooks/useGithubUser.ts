@@ -5,5 +5,6 @@ export const useGithubUser = (username: string) => {
   return useQuery({
     queryKey: ["users", username],
     queryFn: () => getUser(username),
+    retry: false,
   });
 };
