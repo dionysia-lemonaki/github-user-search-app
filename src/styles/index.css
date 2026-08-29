@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+  font-display: swap;
+  font-family: "Space Mono";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/space-mono-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Space Mono";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../assets/fonts/space-mono-700.woff2") format("woff2");
+}
+
+@theme {
+  --font-space: "Space Mono", monospace;
+
+  --color-neutral-900: hsl(220 40% 13%);
+  --color-neutral-700: hsl(217 21% 21%);
+  --color-neutral-500: hsl(217 35% 45%);
+  --color-neutral-200: hsl(222 44% 70%);
+  --color-neutral-100: hsl(227 100% 98%);
+  --color-neutral-0: hsl(0 0% 100%);
+
+  --color-blue-500: hsl(212 100% 50%);
+}
+
+body {
+  @apply font-space bg-neutral-100 dark:bg-neutral-900;
+}

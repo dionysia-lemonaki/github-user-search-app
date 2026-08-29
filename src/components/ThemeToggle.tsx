@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import iconMoon from "../assets/images/icon-moon.svg";
-import iconSun from "../assets/images/icon-sun.svg";
+import { Sun, Moon } from "lucide-react";
 
 type Theme = "light" | "dark";
 
@@ -35,12 +34,15 @@ const ThemeToggle = () => {
   };
 
   return (
-    <div>
-      <p>{theme === "dark" ? "light" : "dark"}</p>
-      <button onClick={toggleTheme}>
-        <img src={theme === "dark" ? iconSun : iconMoon} alt="" />
-      </button>
-    </div>
+    <button
+      onClick={toggleTheme}
+      className="cursor-pointer flex items-center gap-3 md:gap-4 text-neutral-500 dark:text-neutral-200 hover:text-neutral-700 dark:hover:text-neutral-0 rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-500"
+    >
+      <span className="uppercase font-bold text-[0.8125rem] tracking-[0.192em] leading-[1.4]">
+        {theme === "dark" ? "light" : "dark"}
+      </span>
+      {theme === "dark" ? <Sun /> : <Moon />}
+    </button>
   );
 };
 

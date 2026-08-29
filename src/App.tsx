@@ -16,14 +16,21 @@ const App = () => {
   };
 
   return (
-    <div>
-      <ThemeToggle />
-      <SearchBar
-        input={input}
-        onInputChange={handleInputChange}
-        onSearch={handleSearch}
-      />
-      <UserProfile username={username} />
+    <div className="min-h-screen flex justify-center items-center p-4">
+      <div className="max-w-182.5 w-full">
+        <header className="flex justify-between">
+          <p className="text-neutral-900 dark:text-neutral-0 font-bold text-[1.625rem] leading-none">
+            devfinder
+          </p>
+          <ThemeToggle />
+        </header>
+        <SearchBar
+          input={input}
+          onInputChange={handleInputChange}
+          onSearch={handleSearch}
+        />
+        <UserProfile username={username} />
+      </div>
     </div>
   );
 };
