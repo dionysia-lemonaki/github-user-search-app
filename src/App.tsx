@@ -24,12 +24,14 @@ const App = () => {
           </p>
           <ThemeToggle />
         </header>
-        <SearchBar
-          input={input}
-          onInputChange={handleInputChange}
-          onSearch={handleSearch}
-        />
-        <UserProfile username={username} />
+        <main>
+          <SearchBar
+            input={input}
+            onInputChange={handleInputChange}
+            onSearch={handleSearch}
+          />
+          <UserProfile username={username} />
+        </main>
       </div>
     </div>
   );
