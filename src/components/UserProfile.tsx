@@ -17,7 +17,11 @@ const UserProfile = ({ username }: { username: string }) => {
     if (error.message === "User not found") {
       return <UserNotFound />;
     }
-    return <p>{error.message}</p>;
+    return (
+      <p className="mt-8 md:mt-10 text-neutral-700 dark:text-neutral-0">
+        {error.message}
+      </p>
+    );
   }
 
   return (
